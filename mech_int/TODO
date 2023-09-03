@@ -1,7 +1,0 @@
-write readme
-remove all comments 
-remove all header comments
-fix all filepaths (private)
-* train_flipped is doing something a bit weird, because of modes.
-
-dependency stuff

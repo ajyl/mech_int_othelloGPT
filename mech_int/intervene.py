@@ -146,18 +146,6 @@ for _sample in tqdm(intv_data):
             )
         )
 
-    # (patched_logits, modified_cache) = othello_gpt.run_with_cache_and_hooks(
-    #    partial_game,
-    #    fwd_hooks=[
-    #        ("blocks.2.hook_attn_out", hook_fns[5]),
-    #        ("blocks.3.hook_attn_out", hook_fns[5]),
-    #        ("blocks.4.hook_attn_out", hook_fns[5]),
-    #        ("blocks.5.hook_attn_out", hook_fns[5]),
-    #        ("blocks.6.hook_attn_out", hook_fns[5]),
-    #        ("blocks.7.hook_attn_out", hook_fns[5]),
-    #    ],
-    # )
-
     (patched_logits, modified_cache) = run_with_cache_and_hooks(
         othello_gpt,
         [

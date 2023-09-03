@@ -12,7 +12,12 @@ from tqdm import tqdm
 from data import get_othello
 from data.othello import permit, OthelloBoardState, permit_reverse
 from mingpt.dataset import CharDataset
-from mech_int.tl_othello_utils import load_hooked_model, to_board_label, ITOS
+from mech_int.tl_othello_utils import (
+    load_hooked_model,
+    to_board_label,
+    ITOS,
+    run_with_cache_and_hooks,
+)
 from constants import OTHELLO_HOME
 from mingpt.utils import set_seed
 
@@ -122,9 +127,9 @@ for _sample in tqdm(intv_data):
             )
         )
 
-    (patched_logits, modified_cache) = othello_gpt.run_with_cache_and_hooks(
-        partial_game,
-        fwd_hooks=[
+    (patched_logits, modified_cache) = run_with_cache_and_hooks(
+        othello_gpt,
+        [
             ("blocks.0.hook_attn_out", hook_fns[5]),
             ("blocks.1.hook_attn_out", hook_fns[5]),
             ("blocks.2.hook_attn_out", hook_fns[5]),
@@ -134,6 +139,7 @@ for _sample in tqdm(intv_data):
             ("blocks.6.hook_attn_out", hook_fns[5]),
             ("blocks.7.hook_attn_out", hook_fns[5]),
         ],
+        partial_game,
     )
     orig_topk_preds = orig_logits[0, -1].topk(k=60)
     modified_topk_preds = patched_logits[0, -1].topk(k=60)

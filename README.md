@@ -17,7 +17,7 @@ conda activate mech_int_othello
 Download relevnt data:
 
 * [OthelloGPT](https://drive.google.com/drive/folders/1bpnwJnccpr9W-N_hzXSm59hT7Lij4HxZ?usp=sharing): We only analyze the synthetic model. Save this checkpoint to the root directory of this repo.
-* [sequence data](): Game sequence data used for training probes and the rest of our experiments. Keep this data in `./data`.
+* [sequence data](https://drive.google.com/drive/folders/1SdBk94m3QJW0w4sfx6MQlh7BtyQlYeRl?usp=sharing): Game sequence data used for training probes and the rest of our experiments. Keep this data in `./data`.
 
 
 ## Relevant Files

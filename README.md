@@ -14,9 +14,9 @@ conda env create -f environment.yml
 conda activate mech_int_othello
 ```
 
-Download relevnt data:
+Download relevent data:
 
-* [OthelloGPT](https://drive.google.com/drive/folders/1bpnwJnccpr9W-N_hzXSm59hT7Lij4HxZ?usp=sharing): We only analyze the synthetic model. Save this checkpoint to the root directory of this repo.
+* [OthelloGPT](https://drive.google.com/file/d/1Soc-OCGfuIk6P617hS6qqrAy_bI7KQHs/view?usp=drive_link): We only analyze the synthetic model. Save this checkpoint to the root directory of this repo.
 * [sequence data](https://drive.google.com/drive/folders/1SdBk94m3QJW0w4sfx6MQlh7BtyQlYeRl?usp=sharing): Game sequence data used for training probes and the rest of our experiments. Keep this data in `./data`.
 
 
